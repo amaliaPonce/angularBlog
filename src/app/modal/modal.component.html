@@ -1,0 +1,42 @@
+<!-- Formularío de crear artículo -->
+
+<div class="modal-container" *ngIf="showDetails">
+  <span class="modal-close" (click)="closeModal()">&times;</span>
+  <form (submit)="createArticle()" class="form-container">
+    <label for="newTitle" class="form-label">Título:</label>
+    <input type="text" id="newTitle" name="newTitle" [(ngModel)]="newArticleData.title" required class="form-input" />
+
+    <label for="newContent" class="form-label">Contenido:</label>
+    <textarea id="newContent" name="newContent" [(ngModel)]="newArticleData.content" required class="form-input"></textarea>
+
+    <label for="newAuthor" class="form-label">Autor:</label>
+    <select id="newAuthor" name="newAuthor" [(ngModel)]="newArticleData.author_id" required class="form-select">
+      <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+    </select>
+
+    <label for="newCategory" class="form-label">Categoría:</label>
+    <select id="newCategory" name="newCategory" [(ngModel)]="newArticleData.category_id" required class="form-select">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+
+    <label for="newImage" class="form-label">Imagen:</label>
+    <input type="file" (change)="onFileChange($event)" accept="image/*" name="newImage" class="form-input" />
+
+    <button type="submit" class="form-button" [disabled]="!newArticleData.imageFile">Crear Artículo</button>
+  </form>
+</div>
+<!-- Formularío de crear categoría -->
+
+<div class="modal-background" *ngIf="showCategoryForm" (click)="closeCategoryForm()">
+  <div class="modal-container category-form" (click)="$event.stopPropagation()">
+    <span class="modal-close" (click)="closeCategoryForm()">&times;</span>
+    <h2 class="mb-4 text-2xl font-extrabold leading-tight text-gray-900">Crear Nueva Categoría</h2>
+    <form (submit)="createCategory()" class="form-container">
+      <label for="newCategoryName" class="form-label">Nombre de la Categoría:</label>
+      <input type="text" id="newCategoryName" name="newCategoryName" [(ngModel)]="newCategoryName" required class="form-input" />
+
+      <button type="submit" class="form-button">Crear Categoría</button>
+    </form>
+  </div>
+</div>
+

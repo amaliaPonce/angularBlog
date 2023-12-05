@@ -1,0 +1,82 @@
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    margin: 20px auto;
+}
+
+/* Estilo de los botones de crear artículo y categoría */
+.createArticle,
+.createCategory {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Añade espacio entre los botones y el ícono de más (+) */
+}
+
+/* Estilo del formulario común */
+.form-container {
+    margin-top: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #6b1cb5;
+}
+.article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  

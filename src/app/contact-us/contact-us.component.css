@@ -1,0 +1,46 @@
+:host {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/contact.png");
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  margin-top: 290px;
+}
+
+h2 {
+  font-family: "RocaOneBold", sans-serif;
+  color: white;
+  font-size: 35px;
+}
+.title {
+  color: white;
+  font-size: 60px;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: white;
+
+}
+@media only screen and (max-width: 768px) {
+  :host {
+    margin-top: 1100px;
+    background: #ffffff;
+  }
+  .title {
+    background-color: #84574c;
+    padding: 15px;
+    color: white;
+  }
+  h2{
+    color: #84574c;
+  }
+  p{
+    margin-top: 30px;
+  }
+}

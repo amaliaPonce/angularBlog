@@ -1,0 +1,74 @@
+<div class="relative flex items-center mb-4">
+  <label
+    for="showDetails"
+    class="toggle-switch bg-purple-500 text-white w-10 h-10 flex items-center justify-center rounded-full cursor-pointer transition duration-300 "
+    (click)="toggleDetails()"
+    [attr.aria-label]="'Toggle Details'"
+  > 
+    <i class="bx bx-plus"></i>
+  </label>
+
+  <input type="hidden" id="showDetails" [(ngModel)]="showDropdownMenu" />
+
+  <div class="relative" *ngIf="showDropdownMenu">
+    <div class="dropdown-menu">
+      <button class="createArticle" (click)="openCreateArticleModal()">Crear Artículo</button>
+      <button class="createCategory" (click)="toggleCategoryForm()">Crear Categoría</button>
+    </div>
+  </div>
+</div>
+
+<app-modal *ngIf="showModal" 
+           [showDetails]="showModal"
+           [newArticleData]="newArticleData"
+           [users]="users"
+           [categories]="categories"
+           [showCategoryForm]="showCategoryForm"
+           (createCategoryEvent)="closeCategoryForm()">
+</app-modal>
+
+<section class="px-4 py-24 mx-auto max-w-7xl">
+  <h2 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900">
+    Beauty Blog
+  </h2>
+  <p class="mb-20 text-lg text-gray-500">
+    Comes directly from the desk of engineers, creators, and managers at Skcript.
+  </p>
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+    <div *ngFor="let article of articles">
+      <!-- Contenedor del artículo -->
+      <div class="article-container">
+        <a [routerLink]="['/article', article.id]">
+          <img [src]="getFullImageUrl(article.image_url)" alt="{{ article.title }}" />
+        </a>
+        <h2 class="mb-2 text-lg font-semibold text-gray-900">
+          <a [routerLink]="['/article', article.id]" class="text-gray-900 hover:text-purple-700">{{ article.title }}</a>
+        </h2>
+        <p class="mb-3 text-sm font-normal text-gray-500">{{ article.content }}</p>
+        <p class="mb-3 text-sm font-normal text-gray-500">
+          <a href="#" class="font-medium text-gray-900 hover:text-purple-700">{{ article.author_id }}</a>
+          • {{ article.created_at | date }}
+        </p>
+      </div>
+    </div>
+    <!-- Contenedor de botones -->
+    <div class="flex flex-col items-center justify-center mt-20 space-x-2 space-y-2 md:flex-row">
+      <button
+        (click)="goToPage(page - 1)"
+        [disabled]="page === 1"
+        class="w-full createArticle rounded-full btn btn-light btn-xl md:w-auto"
+      >
+        Previous Page
+      </button>
+      <span class="text-lg font-semibold text-gray-900">{{ page }} / {{ Math.ceil(totalArticles / pageSize) }}</span>
+      <button
+        (click)="goToPage(page + 1)"
+        [disabled]="page === Math.ceil(totalArticles / pageSize)"
+        class="w-full createCategory rounded-full btn btn-light btn-xl md:w-auto"
+      >
+        Next Page
+      </button>
+      <button class="createCategory" (click)="toggleCategoryForm()">Crear Categoría</button>
+    </div>
+  </div>
+</section>

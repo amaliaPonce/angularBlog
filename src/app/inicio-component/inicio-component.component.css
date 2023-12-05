@@ -1,0 +1,66 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/Inicio.png");
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+}
+
+h1 {
+  font-family: "RocaOne", sans-serif;
+  font-size: 4vw;
+  color: #eeecde;
+  margin: 2vw;
+  max-width: 100%;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 300;
+  color: #eeecde;
+  margin: 2vw;
+  margin-bottom: 3vw;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vw;
+}
+
+.logo-img {
+  width: 20%;
+  height: auto;
+}
+
+/* Media query */
+@media only screen and (max-width: 768px) {
+  :host {
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 8vw;
+    margin: 4vw;
+  }
+
+  h2 {
+    font-size: 3vw;
+    margin: 4vw;
+    margin-bottom: 6vw;
+  }
+
+  .logo-container {
+    margin-bottom: 8vw;
+  }
+
+  .logo-img {
+    width: 50%;
+  }
+}

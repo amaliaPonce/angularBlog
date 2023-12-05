@@ -1,0 +1,31 @@
+<!-- article-details.component.html -->
+
+<article class="px-4 py-24 mx-auto max-w-7xl" *ngIf="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="w-full mx-auto mb-12 text-left md:w-3/4 lg:w-1/2">
+      <img [src]="article.image_url" class="object-cover w-full h-64 bg-center rounded-lg" [alt]="article.title" />
+      <p class="mt-6 mb-2 text-xs font-semibold tracking-wider uppercase text-primary">Development</p>
+      <h1 class="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl" itemprop="headline" [title]="article.title">
+        {{ article.title }}
+      </h1>
+      <div class="flex mb-6 space-x-2">
+        <a class="text-gray-900 bg-gray-100 badge hover:bg-gray-200" href="#">Añadri categoria</a>
+        <a class="text-gray-900 bg-gray-100 badge hover:bg-gray-200" href="#">Añadir categoria</a>
+        <a class="text-gray-900 bg-gray-100 badge hover:bg-gray-200" href="#">Añador categoria</a>
+      </div>
+      <a class="flex items-center text-gray-700" href="#">
+        <div class="avatar"><img src="/placeholder.jpg" alt="Photo of Praveen Juge" /></div>
+        <div class="ml-2">
+          <p class="text-sm font-semibold text-gray-800">Añadir nombre usuario</p>
+          <p class="text-sm text-gray-500">{{ article.created_at | date }}</p>
+        </div>
+      </a>
+    </div>
+  
+    <div class="w-full mx-auto prose md:w-3/4 lg:w-1/2">
+      <p>
+        {{ article.content }}
+      </p>
+    </div>
+    
+  </article>
+  

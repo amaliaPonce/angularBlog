@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/services.png");
+  background-size: cover;
+  background-position: center;
+}
+section {
+  margin-top: 100px;
+}
+span {
+  background-color: #ffffff;
+}
+h2 {
+  font-family: "RocaOneBold", sans-serif;
+  font-size: 28px;
+}
+p,h2{
+    color: #156669;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: w;
+}
+/* Media query para estilos en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    :host {
+background:#ffffff; 
+    }
+  
+    
+  }
+  

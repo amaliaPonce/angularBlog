@@ -1,0 +1,51 @@
+/* nav.component.css */
+
+.nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 60px;
+  margin: 40px;
+  
+  border-radius: 10px;
+  font-family: 'Montserrat';
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+li {
+margin: 0;
+margin-bottom: 30px;
+}
+
+a {
+  
+  text-decoration: none;
+  color: #7f7e79;
+  padding: 15px 15px;
+  border-radius: 20px;
+  background-color: #eeecde;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #7f7e79;
+  color: #eeecde;
+
+}
+/* Media query para estilos en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .nav {
+    margin: 0;
+  }
+  a {
+font-size: 10px;
+  }
+}
